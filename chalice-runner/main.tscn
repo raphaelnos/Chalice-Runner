@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c171tn1kk5bic" path="res://icon.svg" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cog65ggl4srdr" path="res://game_manager.gd" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://d1o5nq8nou73g" path="res://relic.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://clwot1sejpaff" path="res://killzone.gd" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(121, 119)
@@ -13,6 +14,9 @@ size = Vector2(993, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lquwl"]
 radius = 23.96
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(1856, 20)
 
 [node name="Main" type="Node2D" unique_id=1036397527]
 
@@ -68,3 +72,10 @@ texture = ExtResource("1_ig7tw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Relic" unique_id=1486744066]
 position = Vector2(487.2, 1.2000008)
 shape = SubResource("CircleShape2D_lquwl")
+
+[node name="Killzone" type="Area2D" parent="." unique_id=2044797059]
+script = ExtResource("5_lquwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=731380960]
+position = Vector2(552, 147)
+shape = SubResource("RectangleShape2D_7mycd")
