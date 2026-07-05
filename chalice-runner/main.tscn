@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://djjggynmws2hq"]
 
 [ext_resource type="Script" uid="uid://mftptw8r8aw0" path="res://player.gd" id="1_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://c171tn1kk5bic" path="res://icon.svg" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dvigmrac12g03" path="res://SpriteSheet Backround removed.png" id="2_7mycd"]
 [ext_resource type="Script" uid="uid://cog65ggl4srdr" path="res://game_manager.gd" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://d1o5nq8nou73g" path="res://relic.gd" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bi1qeht85ogtn" path="res://RelicSprite.png" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://clwot1sejpaff" path="res://killzone.gd" id="5_lquwl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
@@ -117,7 +117,7 @@ script = ExtResource("4_1bvp3")
 [node name="Sprite2D" type="Sprite2D" parent="Relic" unique_id=946017367]
 position = Vector2(487.2, 1.2000008)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_ig7tw")
+texture = ExtResource("5_7mycd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Relic" unique_id=1486744066]
 position = Vector2(487.2, 1.2000008)
