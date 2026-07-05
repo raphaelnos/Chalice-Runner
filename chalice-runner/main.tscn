@@ -2,12 +2,59 @@
 
 [ext_resource type="Script" uid="uid://mftptw8r8aw0" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://c171tn1kk5bic" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dvigmrac12g03" path="res://SpriteSheet Backround removed.png" id="2_7mycd"]
 [ext_resource type="Script" uid="uid://cog65ggl4srdr" path="res://game_manager.gd" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://d1o5nq8nou73g" path="res://relic.gd" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://clwot1sejpaff" path="res://killzone.gd" id="5_lquwl"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("2_7mycd")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("2_7mycd")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("2_7mycd")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
+atlas = ExtResource("2_7mycd")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4c57u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272bh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mycd")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kek77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c57u")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(121, 119)
+size = Vector2(79, 108.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(993, 20)
@@ -23,10 +70,13 @@ size = Vector2(1856, 20)
 [node name="Player" type="CharacterBody2D" parent="." unique_id=489185329]
 script = ExtResource("1_0xm2m")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=199754621]
-texture = ExtResource("1_ig7tw")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1099030956]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4c57u")
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1956979299]
+position = Vector2(6, 0)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1269702532]
@@ -39,8 +89,8 @@ position = Vector2(486.5, 70)
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="ColorRect" type="ColorRect" parent="Ground" unique_id=613183669]
-offset_left = -10.0
-offset_top = 59.0
+offset_left = -17.0
+offset_top = 53.0
 offset_right = 983.0
 offset_bottom = 81.0
 color = Color(0.120481126, 0.153961, 0.18494987, 1)
